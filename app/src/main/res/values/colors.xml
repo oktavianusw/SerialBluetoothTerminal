@@ -4,7 +4,22 @@
     <color name="colorPrimaryDark">#bf360c</color>
     <color name="colorAccent">#ff6e40</color>
 
-    <color name="colorRecieveText">#00FF00</color>
-    <color name="colorSendText">#82CAFF</color>
-    <color name="colorStatusText">#FFDB58</color>
+    <color name="colorRecieveText">#ffffff</color>
+    <color name="colorSendText">#FF000000</color>
+    <color name="colorStatusText">#ffffff</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--    Custom-->
+    <color name="blue_200">#90CAF9</color>
+
+    <color name="penta_color">#54c2b3</color>
+    <color name="raisin_black">#252323</color>
+
+
 </resources>

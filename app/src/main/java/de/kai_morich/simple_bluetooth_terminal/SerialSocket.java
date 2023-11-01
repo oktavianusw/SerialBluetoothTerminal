@@ -45,6 +45,7 @@ class SerialSocket implements Runnable {
         return device.getName() != null ? device.getName() : device.getAddress();
     }
 
+
     /**
      * connect-success and most connect-errors are returned asynchronously to listener
      */
