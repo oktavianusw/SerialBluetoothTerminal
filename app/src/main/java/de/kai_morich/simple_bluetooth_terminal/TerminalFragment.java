@@ -229,6 +229,75 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
             send(json);
         });
 
+//        Setting Jenis Battery
+        EditText get_v_battery = view.findViewById(R.id.edit_v_battery);
+        View sendBtnBattery = view.findViewById(R.id.button_send_battery);
+        sendBtnBattery.setOnClickListener(v -> {
+            String value_v_battery = get_v_battery.getText().toString();
+            String json = "{\"k\" : \"15\",\"v\" : \""+ value_v_battery +"\"}\n";
+            send(json);
+        });
+
+//        Setting PentaFlood
+        EditText get_v_pentaflood = view.findViewById(R.id.edit_v_pentaflood);
+        EditText get_s_pentaflood = view.findViewById(R.id.edit_s_pentaflood);
+        EditText get_d_pentaflood = view.findViewById(R.id.edit_d_pentaflood);
+        EditText get_u_pentaflood = view.findViewById(R.id.edit_u_pentaflood);
+        View sendBtnPentaflood = view.findViewById(R.id.button_send_pentaflood);
+        sendBtnPentaflood.setOnClickListener(v -> {
+            String value_v_pentafloof = get_v_pentaflood.getText().toString();
+            String value_s_pentafloof = get_s_pentaflood.getText().toString();
+            String value_d_pentafloof = get_d_pentaflood.getText().toString();
+            String value_u_pentafloof = get_u_pentaflood.getText().toString();
+            String json = "{\"k\" : \"10\",\"v\" : \""+ value_v_pentafloof +"\",\"s\" : \""+value_s_pentafloof+"\",\"d\" : \""+value_d_pentafloof+"\",\"u\" : \""+value_u_pentafloof+"\"}";
+            send(json);
+        });
+
+//        Setting APN
+        EditText get_a_apn = view.findViewById(R.id.edit_a_apn);
+        EditText get_u_apn = view.findViewById(R.id.edit_u_apn);
+        EditText get_p_apn = view.findViewById(R.id.edit_p_apn);
+        View sendBtnApn = view.findViewById(R.id.button_send_apn);
+        sendBtnApn.setOnClickListener(v -> {
+            String value_a_apn = get_a_apn.getText().toString();
+            String value_u_apn = get_u_apn.getText().toString();
+            String value_p_apn = get_p_apn.getText().toString();
+            String json = "{\"k\" : \"11\",\"a\" : \""+ value_a_apn +"\",\"u\" : \""+value_u_apn+"\",\"p\" : \""+value_p_apn+"\"}";
+            send(json);
+        });
+
+//        Setting Platform Antares
+        EditText get_a_antares = view.findViewById(R.id.edit_a_platform_antares);
+        EditText get_d_antares = view.findViewById(R.id.edit_d_platform_antares);
+        EditText get_p_antares = view.findViewById(R.id.edit_p_platform_antares);
+        EditText get_h_antares = view.findViewById(R.id.edit_h_platform_antares);
+        EditText get_o_antares = view.findViewById(R.id.edit_o_platform_antares);
+        View sendBtnPlatformAntares = view.findViewById(R.id.button_send_platform_antares);
+        sendBtnPlatformAntares.setOnClickListener(v -> {
+            String value_a_antares = get_a_antares.getText().toString();
+            String value_d_antares = get_d_antares.getText().toString();
+            String value_p_antares = get_p_antares.getText().toString();
+            String value_h_antares = get_h_antares.getText().toString();
+            String value_o_antares = get_o_antares.getText().toString();
+            String json = "{\"k\" : \"12\",\"a\" : \""+ value_a_antares +"\",\"d\" : \""+value_d_antares+"\",\"p\" : \""+value_p_antares+"\",\"h\" : \""+value_h_antares+"\",\"o\" : \""+value_o_antares+"\"}";
+            send(json);
+        });
+
+//        Setting Jenis Sensor
+        EditText get_v_jenis_sensor = view.findViewById(R.id.edit_v_jenis_sensor);
+        EditText get_s_jenis_sensor = view.findViewById(R.id.edit_s_jenis_sensor);
+        EditText get_d_jenis_sensor = view.findViewById(R.id.edit_d_jenis_sensor);
+        EditText get_u_jenis_sensor = view.findViewById(R.id.edit_u_jenis_sensor);
+        View sendBtnJenisSensor = view.findViewById(R.id.button_send_jenis_sensor);
+        sendBtnJenisSensor.setOnClickListener(v -> {
+            String value_v_jenis_sensor = get_v_jenis_sensor.getText().toString();
+            String value_s_jenis_sensor = get_s_jenis_sensor.getText().toString();
+            String value_d_jenis_sensor = get_d_jenis_sensor.getText().toString();
+            String value_u_jenis_sensor = get_u_jenis_sensor.getText().toString();
+            String json = "{\"k\" : \"10\",\"v\" : \""+ value_v_jenis_sensor +"\",\"s\" : \""+value_s_jenis_sensor+"\",\"d\" : \""+value_d_jenis_sensor+"\",\"u\" : \""+value_u_jenis_sensor+"\"}";
+            send(json);
+        });
+
 //        Setting Connection
 //        EditText set_v = view.findViewById(R.id.edit_v);
 //        View sendBtnConnection = view.findViewById(R.id.button_send_connection);
