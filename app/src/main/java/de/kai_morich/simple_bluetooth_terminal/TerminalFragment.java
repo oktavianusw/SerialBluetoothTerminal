@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayDeque;
@@ -299,25 +300,145 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
         });
 
 //        Setting Connection
-//        EditText set_v = view.findViewById(R.id.edit_v);
-//        View sendBtnConnection = view.findViewById(R.id.button_send_connection);
-//
-//        sendBtnConnection.setOnClickListener(v -> {
-//            boolean v_value_set = false;
-//            String v_value = set_v.getText().toString();
-//
-//            if (v_value.isEmpty() && !v_value_set) {
-//                set_v.setText("1");
-//                v_value_set = true;
-//                v_value = "1";
-//            }
-//
-//            String json = "{\"k\" : \"2\",\"v\" : \"" + v_value + "\"}";
-//
-//            send(json);
-//        });
-        
+        EditText set_v = view.findViewById(R.id.edit_v_connectivity);
+        View sendBtnConnection = view.findViewById(R.id.button_send_connectivity);
 
+        sendBtnConnection.setOnClickListener(v -> {
+            boolean v_value_set = false;
+            String v_value = set_v.getText().toString();
+
+            if (v_value.isEmpty() && !v_value_set) {
+                set_v.setText("1");
+                v_value_set = true;
+                v_value = "1";
+            }
+
+            String json = "{\"k\" : \"2\",\"v\" : \"" + v_value + "\"}";
+
+            send(json);
+        });
+
+
+        TextView tittle_time_setting = view.findViewById(R.id.tittle_time_setting);
+        tittle_time_setting.setOnClickListener(v -> {
+            ConstraintLayout time_setting_container = view.findViewById(R.id.time_setting_container);
+
+            if (time_setting_container.getVisibility() == View.GONE) {
+                time_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                time_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView tittle_seth_auth_lora_setting = view.findViewById(R.id.tittle_seth_auth_lora_setting);
+        tittle_seth_auth_lora_setting.setOnClickListener(v -> {
+            ConstraintLayout v_setting_container = view.findViewById(R.id.v_setting_container);
+
+            if (v_setting_container.getVisibility() == View.GONE) {
+                v_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                v_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView tittle_sd_card_setting = view.findViewById(R.id.tittle_sd_card_setting);
+        tittle_sd_card_setting.setOnClickListener(v -> {
+            ConstraintLayout sd_card_setting_container = view.findViewById(R.id.sd_card_setting_container);
+
+            if (sd_card_setting_container.getVisibility() == View.GONE) {
+                sd_card_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                sd_card_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView tittle_serial_number_setting = view.findViewById(R.id.tittle_serial_number_setting);
+        tittle_serial_number_setting.setOnClickListener(v -> {
+            ConstraintLayout serial_number_setting_container = view.findViewById(R.id.serial_number_setting_container);
+
+            if (serial_number_setting_container.getVisibility() == View.GONE) {
+                serial_number_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                serial_number_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView tittle_interval_sending_setting = view.findViewById(R.id.tittle_interval_sending_setting);
+        tittle_interval_sending_setting.setOnClickListener(v -> {
+            ConstraintLayout interval_sending_setting_container = view.findViewById(R.id.interval_sending_setting_container);
+
+            if (interval_sending_setting_container.getVisibility() == View.GONE) {
+                interval_sending_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                interval_sending_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView jenis_battery_setting = view.findViewById(R.id.jenis_battery_setting);
+        jenis_battery_setting.setOnClickListener(v -> {
+            ConstraintLayout jenis_battery_setting_container = view.findViewById(R.id.jenis_battery_setting_container);
+
+            if (jenis_battery_setting_container.getVisibility() == View.GONE) {
+                jenis_battery_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                jenis_battery_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView pentaflood_setting = view.findViewById(R.id.pentaflood_setting);
+        pentaflood_setting.setOnClickListener(v -> {
+            ConstraintLayout pentaflood_setting_container = view.findViewById(R.id.pentaflood_setting_container);
+
+            if (pentaflood_setting_container.getVisibility() == View.GONE) {
+                pentaflood_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                pentaflood_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView apn_setting = view.findViewById(R.id.apn_setting);
+        apn_setting.setOnClickListener(v -> {
+            ConstraintLayout apn_setting_container = view.findViewById(R.id.apn_setting_container);
+
+            if (apn_setting_container.getVisibility() == View.GONE) {
+                apn_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                apn_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView platform_antares_setting = view.findViewById(R.id.platform_antares_setting);
+        platform_antares_setting.setOnClickListener(v -> {
+            ConstraintLayout platform_antares_setting_container = view.findViewById(R.id.platform_antares_setting_container);
+
+            if (platform_antares_setting_container.getVisibility() == View.GONE) {
+                platform_antares_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                platform_antares_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView tittle_connectivity_setting = view.findViewById(R.id.tittle_connectivity_setting);
+        tittle_connectivity_setting.setOnClickListener(v -> {
+            ConstraintLayout connectivity_setting_container = view.findViewById(R.id.connectivity_setting_container);
+
+            if (connectivity_setting_container.getVisibility() == View.GONE) {
+                connectivity_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                connectivity_setting_container.setVisibility(View.GONE);
+            }
+        });
+
+        TextView jenis_sensor_setting = view.findViewById(R.id.jenis_sensor_setting);
+        jenis_sensor_setting.setOnClickListener(v -> {
+            ConstraintLayout jenis_sensor_setting_container = view.findViewById(R.id.jenis_sensor_setting_container);
+
+            if (jenis_sensor_setting_container.getVisibility() == View.GONE) {
+                jenis_sensor_setting_container.setVisibility(View.VISIBLE);
+            } else {
+                jenis_sensor_setting_container.setVisibility(View.GONE);
+            }
+        });
 
         return view;
     }

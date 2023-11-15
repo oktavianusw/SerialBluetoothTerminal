@@ -75,7 +75,7 @@
                 android:background="@drawable/container_background"
                 android:elevation="4dp"
                 android:paddingBottom="20dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/tittle_time_setting"
                 tools:layout_editor_absoluteX="0dp">
 
@@ -268,62 +268,53 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time_setting_container" />
 
-<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                            android:id="@+id/v_setting_container"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:visibility="visible"-->
-<!--                            android:background="@drawable/container_background"-->
-<!--                            app:layout_constraintTop_toBottomOf="@+id/tittle_connectivity_setting"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            >-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/connectivity_setting_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:background="@drawable/container_background"
+                    app:layout_constraintTop_toBottomOf="@+id/tittle_connectivity_setting"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
 
-<!--                            <TextView-->
-<!--                                android:id="@+id/text_v"-->
-<!--                                android:layout_width="60dp"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_margin="15dp"-->
-<!--                                android:text="V: "-->
-<!--                                android:textColor="@color/black"-->
-<!--                                app:layout_constraintStart_toStartOf="parent"-->
-<!--                                app:layout_constraintTop_toTopOf="@+id/v_setting_container" />-->
+                    <TextView
+                        android:id="@+id/text_v_connectivity"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:text="v : "
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/connectivity_setting_container" />
 
-<!--                            <EditText-->
-<!--                                android:id="@+id/edit_v"-->
-<!--                                android:layout_width="100dp"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:inputType="number"-->
-<!--                                android:textSize="15sp"-->
-<!--                                app:layout_constraintBottom_toBottomOf="@+id/text_v"-->
-<!--                                app:layout_constraintStart_toEndOf="@+id/text_v"-->
-<!--                                app:layout_constraintTop_toTopOf="@+id/text_v" />-->
+                    <EditText
+                        android:id="@+id/edit_v_connectivity"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/text_v_connectivity"
+                        app:layout_constraintStart_toEndOf="@+id/text_v_connectivity"
+                        app:layout_constraintTop_toTopOf="@+id/text_v_connectivity" />
 
-<!--                            <androidx.appcompat.widget.AppCompatSpinner-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                app:layout_constraintTop_toBottomOf="@+id/text_v"-->
-<!--                                app:layout_constraintStart_toStartOf="parent">-->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_send_connectivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="SEND"
+                        android:textColorHint="@color/white"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_v_connectivity" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-<!--                            </androidx.appcompat.widget.AppCompatSpinner>-->
-
-<!--                            <com.google.android.material.button.MaterialButton-->
-<!--                                android:id="@+id/button_send_connection"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_margin="15dp"-->
-<!--                                android:hint="SEND"-->
-<!--                                android:textColorHint="@color/white"-->
-<!--                                android:textSize="16sp"-->
-<!--                                app:cornerRadius="10dp"-->
-<!--                                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                                app:layout_constraintStart_toStartOf="parent"-->
-<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                                app:layout_constraintTop_toBottomOf="@id/edit_v" />-->
-
-
-<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
             <TextView
                 android:id="@+id/tittle_seth_auth_lora_setting"
@@ -340,13 +331,13 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tittle_connectivity_setting"/>
+                app:layout_constraintTop_toBottomOf="@+id/connectivity_setting_container"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/v_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
                 app:layout_constraintTop_toBottomOf="@+id/tittle_seth_auth_lora_setting"
                 app:layout_constraintStart_toStartOf="parent"
@@ -451,7 +442,7 @@
                 android:id="@+id/sd_card_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
                 app:layout_constraintTop_toBottomOf="@+id/tittle_sd_card_setting"
                 app:layout_constraintStart_toStartOf="parent"
@@ -516,7 +507,7 @@
                 android:id="@+id/serial_number_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
                 app:layout_constraintTop_toBottomOf="@+id/tittle_serial_number_setting"
                 app:layout_constraintStart_toStartOf="parent"
@@ -601,7 +592,7 @@
                 android:id="@+id/interval_sending_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
                 app:layout_constraintTop_toBottomOf="@+id/tittle_interval_sending_setting"
                 app:layout_constraintStart_toStartOf="parent"
@@ -706,7 +697,7 @@
                 android:id="@+id/jenis_battery_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
                 app:layout_constraintTop_toBottomOf="@+id/jenis_battery_setting"
                 app:layout_constraintStart_toStartOf="parent"
@@ -771,7 +762,7 @@
                 android:id="@+id/pentaflood_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
                 app:layout_constraintTop_toBottomOf="@+id/pentaflood_setting"
                 app:layout_constraintStart_toStartOf="parent"
@@ -896,7 +887,7 @@
                 android:id="@+id/apn_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
                 app:layout_constraintTop_toBottomOf="@+id/apn_setting"
                 app:layout_constraintStart_toStartOf="parent"
@@ -1001,9 +992,9 @@
                 android:id="@+id/platform_antares_setting_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/container_background"
-                app:layout_constraintTop_toBottomOf="@+id/apn_setting"
+                app:layout_constraintTop_toBottomOf="@+id/platform_antares_setting"
                 app:layout_constraintStart_toStartOf="parent"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp">
@@ -1144,7 +1135,7 @@
                     android:id="@+id/jenis_sensor_setting_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:background="@drawable/container_background"
                     app:layout_constraintTop_toBottomOf="@+id/jenis_sensor_setting"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1248,6 +1239,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

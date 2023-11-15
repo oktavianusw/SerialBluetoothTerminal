@@ -35,6 +35,13 @@ public class DevicesFragment extends ListFragment {
     private Menu menu;
     private boolean permissionMissing;
 
+    String jenis_device = ChooseDevice.jenis_device;
+
+    static class ViewHolder {
+        TextView text1;
+        TextView text2;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,16 +51,40 @@ public class DevicesFragment extends ListFragment {
         listAdapter = new ArrayAdapter<BluetoothDevice>(getActivity(), 0, listItems) {
             @NonNull
             @Override
-            public View getView(int position, View view, @NonNull ViewGroup parent) {
+            public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+                ViewHolder holder;
+
+                if (convertView == null) {
+                    convertView = getActivity().getLayoutInflater().inflate(R.layout.device_list_item, parent, false);
+                    holder = new ViewHolder();
+                    holder.text1 = convertView.findViewById(R.id.text1);
+                    holder.text2 = convertView.findViewById(R.id.text2);
+                    convertView.setTag(holder);
+                } else {
+                    holder = (ViewHolder) convertView.getTag();
+                }
+
                 BluetoothDevice device = listItems.get(position);
-                if (view == null)
-                    view = getActivity().getLayoutInflater().inflate(R.layout.device_list_item, parent, false);
-                TextView text1 = view.findViewById(R.id.text1);
-                TextView text2 = view.findViewById(R.id.text2);
                 @SuppressLint("MissingPermission") String deviceName = device.getName();
-                text1.setText(deviceName);
-                text2.setText(device.getAddress());
-                return view;
+
+                if (deviceName != null) {
+                    String code_device = deviceName.length() >= 3 ? deviceName.substring(0, 3) : "";
+
+                    if (code_device.equalsIgnoreCase(jenis_device)) {
+                        holder.text1.setText(deviceName);
+                        holder.text2.setText(device.getAddress());
+                        convertView.setVisibility(View.VISIBLE); // Make the view visible
+                        return convertView;
+                    }
+                } else {
+                    if (convertView.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) convertView.getParent()).removeView(convertView);
+                    }
+                }
+                listItems.remove(position);
+                notifyDataSetChanged();
+
+                return convertView;
             }
         };
         requestBluetoothPermissionLauncherForRefresh = registerForActivityResult(
